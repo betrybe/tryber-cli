@@ -1,20 +1,20 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 45:
+/***/ 52:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports =
 {
-  parallel      : __nccwpck_require__(506),
-  serial        : __nccwpck_require__(844),
-  serialOrdered : __nccwpck_require__(970)
+  parallel      : __nccwpck_require__(594),
+  serial        : __nccwpck_require__(67),
+  serialOrdered : __nccwpck_require__(567)
 };
 
 
 /***/ }),
 
-/***/ 496:
+/***/ 704:
 /***/ ((module) => {
 
 // API
@@ -50,10 +50,10 @@ function clean(key)
 
 /***/ }),
 
-/***/ 137:
+/***/ 442:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var defer = __nccwpck_require__(780);
+var defer = __nccwpck_require__(914);
 
 // API
 module.exports = async;
@@ -91,7 +91,7 @@ function async(callback)
 
 /***/ }),
 
-/***/ 780:
+/***/ 914:
 /***/ ((module) => {
 
 module.exports = defer;
@@ -124,11 +124,11 @@ function defer(fn)
 
 /***/ }),
 
-/***/ 830:
+/***/ 386:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var async = __nccwpck_require__(137)
-  , abort = __nccwpck_require__(496)
+var async = __nccwpck_require__(442)
+  , abort = __nccwpck_require__(704)
   ;
 
 // API
@@ -206,7 +206,7 @@ function runJob(iterator, key, item, callback)
 
 /***/ }),
 
-/***/ 433:
+/***/ 746:
 /***/ ((module) => {
 
 // API
@@ -250,11 +250,11 @@ function state(list, sortMethod)
 
 /***/ }),
 
-/***/ 883:
+/***/ 951:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var abort = __nccwpck_require__(496)
-  , async = __nccwpck_require__(137)
+var abort = __nccwpck_require__(704)
+  , async = __nccwpck_require__(442)
   ;
 
 // API
@@ -286,12 +286,12 @@ function terminator(callback)
 
 /***/ }),
 
-/***/ 506:
+/***/ 594:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var iterate    = __nccwpck_require__(830)
-  , initState  = __nccwpck_require__(433)
-  , terminator = __nccwpck_require__(883)
+var iterate    = __nccwpck_require__(386)
+  , initState  = __nccwpck_require__(746)
+  , terminator = __nccwpck_require__(951)
   ;
 
 // Public API
@@ -336,10 +336,10 @@ function parallel(list, iterator, callback)
 
 /***/ }),
 
-/***/ 844:
+/***/ 67:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var serialOrdered = __nccwpck_require__(970);
+var serialOrdered = __nccwpck_require__(567);
 
 // Public API
 module.exports = serial;
@@ -360,12 +360,12 @@ function serial(list, iterator, callback)
 
 /***/ }),
 
-/***/ 970:
+/***/ 567:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var iterate    = __nccwpck_require__(830)
-  , initState  = __nccwpck_require__(433)
-  , terminator = __nccwpck_require__(883)
+var iterate    = __nccwpck_require__(386)
+  , initState  = __nccwpck_require__(746)
+  , terminator = __nccwpck_require__(951)
   ;
 
 // Public API
@@ -442,12 +442,12 @@ function descending(a, b)
 
 /***/ }),
 
-/***/ 235:
+/***/ 220:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var util = __nccwpck_require__(837);
 var Stream = (__nccwpck_require__(781).Stream);
-var DelayedStream = __nccwpck_require__(836);
+var DelayedStream = __nccwpck_require__(598);
 
 module.exports = CombinedStream;
 function CombinedStream() {
@@ -657,7 +657,7 @@ CombinedStream.prototype._emitError = function(err) {
 
 /***/ }),
 
-/***/ 836:
+/***/ 598:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var Stream = (__nccwpck_require__(781).Stream);
@@ -771,7 +771,7 @@ DelayedStream.prototype._checkIfMaxDataSizeExceeded = function() {
 
 /***/ }),
 
-/***/ 30:
+/***/ 117:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var debug;
@@ -780,7 +780,7 @@ module.exports = function () {
   if (!debug) {
     try {
       /* eslint global-require: off */
-      debug = __nccwpck_require__(602)("follow-redirects");
+      debug = __nccwpck_require__(638)("follow-redirects");
     }
     catch (error) { /* */ }
     if (typeof debug !== "function") {
@@ -793,7 +793,7 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 476:
+/***/ 660:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var url = __nccwpck_require__(310);
@@ -802,7 +802,7 @@ var http = __nccwpck_require__(685);
 var https = __nccwpck_require__(687);
 var Writable = (__nccwpck_require__(781).Writable);
 var assert = __nccwpck_require__(491);
-var debug = __nccwpck_require__(30);
+var debug = __nccwpck_require__(117);
 
 // Create handlers that pass events from native requests
 var events = ["abort", "aborted", "connect", "error", "socket", "timeout"];
@@ -1421,10 +1421,10 @@ module.exports.wrap = wrap;
 
 /***/ }),
 
-/***/ 474:
+/***/ 124:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var CombinedStream = __nccwpck_require__(235);
+var CombinedStream = __nccwpck_require__(220);
 var util = __nccwpck_require__(837);
 var path = __nccwpck_require__(17);
 var http = __nccwpck_require__(685);
@@ -1432,9 +1432,9 @@ var https = __nccwpck_require__(687);
 var parseUrl = (__nccwpck_require__(310).parse);
 var fs = __nccwpck_require__(147);
 var Stream = (__nccwpck_require__(781).Stream);
-var mime = __nccwpck_require__(92);
-var asynckit = __nccwpck_require__(45);
-var populate = __nccwpck_require__(767);
+var mime = __nccwpck_require__(518);
+var asynckit = __nccwpck_require__(52);
+var populate = __nccwpck_require__(342);
 
 // Public API
 module.exports = FormData;
@@ -1929,7 +1929,7 @@ FormData.prototype.toString = function () {
 
 /***/ }),
 
-/***/ 767:
+/***/ 342:
 /***/ ((module) => {
 
 // populates missing values
@@ -1946,7 +1946,7 @@ module.exports = function(dst, src) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 666:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /*!
@@ -1965,7 +1965,7 @@ module.exports = __nccwpck_require__(765)
 
 /***/ }),
 
-/***/ 92:
+/***/ 518:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -1983,7 +1983,7 @@ module.exports = __nccwpck_require__(765)
  * @private
  */
 
-var db = __nccwpck_require__(289)
+var db = __nccwpck_require__(666)
 var extname = (__nccwpck_require__(17).extname)
 
 /**
@@ -2161,7 +2161,7 @@ function populateMaps (extensions, types) {
 
 /***/ }),
 
-/***/ 788:
+/***/ 412:
 /***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
 
 /* module decorator */ module = __nccwpck_require__.nmd(module);
@@ -7853,7 +7853,7 @@ function populateMaps (extensions, types) {
 
 /***/ }),
 
-/***/ 322:
+/***/ 744:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7969,7 +7969,7 @@ exports.getProxyForUrl = getProxyForUrl;
 
 /***/ }),
 
-/***/ 602:
+/***/ 638:
 /***/ ((module) => {
 
 module.exports = eval("require")("debug");
@@ -8073,14 +8073,14 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 673:
+/***/ 957:
 /***/ ((module, exports, __nccwpck_require__) => {
 
-const { Argument } = __nccwpck_require__(138);
-const { Command } = __nccwpck_require__(810);
-const { CommanderError, InvalidArgumentError } = __nccwpck_require__(50);
-const { Help } = __nccwpck_require__(171);
-const { Option } = __nccwpck_require__(590);
+const { Argument } = __nccwpck_require__(753);
+const { Command } = __nccwpck_require__(2);
+const { CommanderError, InvalidArgumentError } = __nccwpck_require__(736);
+const { Help } = __nccwpck_require__(389);
+const { Option } = __nccwpck_require__(941);
 
 // @ts-check
 
@@ -8107,10 +8107,10 @@ exports.Option = Option;
 
 /***/ }),
 
-/***/ 138:
+/***/ 753:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-const { InvalidArgumentError } = __nccwpck_require__(50);
+const { InvalidArgumentError } = __nccwpck_require__(736);
 
 // @ts-check
 
@@ -8261,7 +8261,7 @@ exports.humanReadableArgName = humanReadableArgName;
 
 /***/ }),
 
-/***/ 810:
+/***/ 2:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 const EventEmitter = (__nccwpck_require__(361).EventEmitter);
@@ -8270,11 +8270,11 @@ const path = __nccwpck_require__(17);
 const fs = __nccwpck_require__(147);
 const process = __nccwpck_require__(282);
 
-const { Argument, humanReadableArgName } = __nccwpck_require__(138);
-const { CommanderError } = __nccwpck_require__(50);
-const { Help } = __nccwpck_require__(171);
-const { Option, splitOptionFlags, DualOptions } = __nccwpck_require__(590);
-const { suggestSimilar } = __nccwpck_require__(382);
+const { Argument, humanReadableArgName } = __nccwpck_require__(753);
+const { CommanderError } = __nccwpck_require__(736);
+const { Help } = __nccwpck_require__(389);
+const { Option, splitOptionFlags, DualOptions } = __nccwpck_require__(941);
+const { suggestSimilar } = __nccwpck_require__(295);
 
 // @ts-check
 
@@ -10447,7 +10447,7 @@ exports.Command = Command;
 
 /***/ }),
 
-/***/ 50:
+/***/ 736:
 /***/ ((__unused_webpack_module, exports) => {
 
 // @ts-check
@@ -10499,10 +10499,10 @@ exports.InvalidArgumentError = InvalidArgumentError;
 
 /***/ }),
 
-/***/ 171:
+/***/ 389:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-const { humanReadableArgName } = __nccwpck_require__(138);
+const { humanReadableArgName } = __nccwpck_require__(753);
 
 /**
  * TypeScript import types for JSDoc, used by Visual Studio Code IntelliSense and `npm run typescript-checkJS`
@@ -10970,10 +10970,10 @@ exports.Help = Help;
 
 /***/ }),
 
-/***/ 590:
+/***/ 941:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-const { InvalidArgumentError } = __nccwpck_require__(50);
+const { InvalidArgumentError } = __nccwpck_require__(736);
 
 // @ts-check
 
@@ -11303,7 +11303,7 @@ exports.DualOptions = DualOptions;
 
 /***/ }),
 
-/***/ 382:
+/***/ 295:
 /***/ ((__unused_webpack_module, exports) => {
 
 const maxDistance = 3;
@@ -11410,20 +11410,20 @@ exports.suggestSimilar = suggestSimilar;
 
 /***/ }),
 
-/***/ 708:
+/***/ 695:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 // Axios v1.3.4 Copyright (c) 2023 Matt Zabriskie and contributors
 
 
-const FormData$1 = __nccwpck_require__(474);
+const FormData$1 = __nccwpck_require__(124);
 const url = __nccwpck_require__(310);
-const proxyFromEnv = __nccwpck_require__(322);
+const proxyFromEnv = __nccwpck_require__(744);
 const http = __nccwpck_require__(685);
 const https = __nccwpck_require__(687);
 const util = __nccwpck_require__(837);
-const followRedirects = __nccwpck_require__(476);
+const followRedirects = __nccwpck_require__(660);
 const zlib = __nccwpck_require__(796);
 const stream = __nccwpck_require__(781);
 const EventEmitter = __nccwpck_require__(361);
@@ -15669,10 +15669,10 @@ module.exports = JSON.parse('{"application/1d-interleaved-parityfec":{"source":"
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-const { program } = __nccwpck_require__(673);
-const axios = __nccwpck_require__(708);
-const moment = __nccwpck_require__(788);
-const spawnSync = __nccwpck_require__(81);
+const { program } = __nccwpck_require__(957);
+const axios = __nccwpck_require__(695);
+const moment = __nccwpck_require__(412);
+const spawnSync = (__nccwpck_require__(81).spawnSync);
 
 program
   .command('test')
@@ -15680,19 +15680,18 @@ program
   .description('Test command')
   .action( async(args) => {
     const command =  (`npm test ${args}`).trim()
-    console.log(command)
+    console.log(`🎹 ${command}`)
     const shell = spawnSync(command, {shell: true, stdio:'inherit'})
 
     if(shell.status === 1) {
-        // console.log(shell.stderr.toString())
-        return;
+      // console.log(shell.stderr.toString())
     }
 
     const date = moment().format('YYYY-MM-DD HH:mm:ss');
     const data = JSON.stringify({ command, date });
 
     try {
-      console.log(data)
+      console.log(`📦 Payload: ${data}`)
       const response =  await axios.post('https://example.com/api/test', data, {
         headers: {
           'Content-Type': 'application/json',
@@ -15700,7 +15699,7 @@ program
       });
       console.log(response.data);
     } catch (error) {
-      console.error("Erro ao enviar dados para API");
+      console.error("🔥 Erro ao enviar dados para API");
     }
   });
 

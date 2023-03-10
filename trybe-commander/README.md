@@ -8,6 +8,9 @@ https://github.com/tj/commander.js
 3. Entre um pasta de projeto JS
 4. Execute o comando `trybe-cli test`
 
+ou
+
+Rode `npm run install-[mac,linux]`
 ### Build
 
 Para realizar o build do CLI basta executar o comando `npm run build-[linux,mac]`. Esse comando irá executar o `ncc` e posteriormente o `pkg`, criando a basta `bin` com o binário do CLI.

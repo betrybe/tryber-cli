@@ -31,6 +31,7 @@ var testCmd = &cobra.Command{
 		// Executa o comando no terminal do estudante
 		output, err := exec.Command("npm", "test", userCommand).CombinedOutput()
 		if err != nil {
+			fmt.Printf("%s\n", output)
 			fmt.Println("Error:", err)
 			return
 		}
